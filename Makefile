@@ -5,7 +5,7 @@ deps:
 	pip install -r test_requirements.txt
 
 lint:
-	fake8 hello_world_test
+	flake8 hello_world_test
 
 run:
 	python main.py

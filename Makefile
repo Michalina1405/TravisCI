@@ -19,7 +19,7 @@ test:
 	PYTHONPATH=. py.test  --verbose -s
 
 docker_build:
-  docker_build -t $(MY_DOCKER_NAME) .
+  docker build -t $(MY_DOCKER_NAME) .
 
 docker_run: docker_build
   docker_run \

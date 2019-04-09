@@ -15,7 +15,7 @@ run:
 	python main.py
 
 test:
-	PYTHONPATH=. py.test
+	PYTHONPATH=. py.test \
 	PYTHONPATH=. py.test  --verbose -s
 
 docker_build:
@@ -26,9 +26,6 @@ docker_run: docker_build
     --name $(SERVICE_NAME)-dev \
 		-p 5000:5000 \
     -d $(MY_DOCKER_NAME)
-
-docker_stop:
-  docker stop $(SERVICE_NAME)-dev
 
 USERNAME=michalina1405
 TAG=$(USERNAME)/$(MY_DOCKER_NAME)

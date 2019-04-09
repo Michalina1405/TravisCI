@@ -22,10 +22,10 @@ docker_build:
   docker build -t $(MY_DOCKER_NAME) .
 
 docker_run: docker_build
-  docker_run \
+  docker run \
     --name $(SERVICE_NAME)-dev \
-    -p 5000:5000
-    -d $(my-MY_DOCKER_NAME)
+    -p 5000:5000 \
+    -d $(MY_DOCKER_NAME)
 
 docker_stop:
   docker stop $(SERVICE_NAME)-dev
@@ -35,6 +35,6 @@ TAG=$(USERNAME)/hello-world-printer
 
 docker_push: docker_build
 		@docker login --username $(USERNAME) --password $${DOCKER_PASSWORD}; \
-		docker tag hello-world-printer $(TAG); \
+		docker tag $(MY_DOCKER_NAME) $(TAG); \
 		docker push $(TAG); \
 		docker logout;

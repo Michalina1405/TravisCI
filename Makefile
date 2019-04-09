@@ -2,10 +2,10 @@ SERVICE_NAME=hello-world-printer
 MY_DOCKER_NAME=$(SERVICE_NAME)
 
 .PHONY: test
-.DEFAULT_GOAL:= test
+.DEFAULT_GOAL := test
 
 deps:
-	pip install -r requirements.txt;
+	pip install -r requirements.txt; \
 	pip install -r test_requirements.txt;
 
 lint:

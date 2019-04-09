@@ -15,7 +15,6 @@ run:
 	python main.py
 
 test:
-	PYTHONPATH=. py.test \
 	PYTHONPATH=. py.test  --verbose -s
 
 docker_build:

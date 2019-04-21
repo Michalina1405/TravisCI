@@ -18,12 +18,6 @@ test:
 	#PYTHONPATH=. py.test
 	PYTHONPATH=. py.test  --verbose -s
 
-test_cov:
-	PYTHONPATH=. py.test -s --cov=.
-
-test_xunit:
-	PYTHONPATH=. py.test -s --cov=. --cov-report xml --junit-xml=test_results.xml
-
 docker_build:
 	docker build -t $(MY_DOCKER_NAME)  .
 
